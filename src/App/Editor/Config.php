@@ -73,7 +73,7 @@ class Config
     {
         $extraStyles = $this->pluginManager ? $this->pluginManager->getPluginStyles() : [];
 
-        return [...$extraStyles, ...$this->styles];
+        return [...$this->styles, ...$extraStyles];
     }
 
     public function getScripts()
