@@ -1,5 +1,5 @@
 import grapesjs from 'grapesjs';
-import 'grapesjs-blocks-basic';
+//import 'grapesjs-blocks-basic';
 import 'grapesjs-blocks-bootstrap4';
 import CodeEditor from "./plugins/code-editor"
 import ExtraButtons from "./plugins/extra-buttons"
@@ -33,17 +33,17 @@ if(config.pluginManager.bootstrap4Blocks){
 	pluginsOpts['grapesjs-blocks-bootstrap4'] = config.pluginManager.bootstrap4Blocks;
 }
 
-if(config.pluginManager.codeEditor){	
+if(config.pluginManager.codeEditor){
 	plugins.push(CodeEditor)
 	pluginsOpts[CodeEditor] = config.pluginManager.codeEditor
 }
 
-if(config.pluginManager.imageEditor){	
+if(config.pluginManager.imageEditor){
 	plugins.push(ImageEditor)
 	pluginsOpts[ImageEditor] = config.pluginManager.imageEditor
 }
 
-if(config.pluginManager.templates){	
+if(config.pluginManager.templates){
 	plugins.push(Templates)
 	pluginsOpts[Templates] = config.pluginManager.templates
 }

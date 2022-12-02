@@ -6,7 +6,7 @@ return [
     | Expose API
     |--------------------------------------------------------------------------
     |
-    | This will expose the editor variable. 
+    | This will expose the editor variable.
     | It can be accessed via a window.gjsEditor
     |
     */
@@ -15,13 +15,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Routes 
+    | Routes
     |--------------------------------------------------------------------------
     |
     | Routes Settings
     |
     */
-    
+
     'routes' => [
         'middleware' => [
             'web', 'auth',
@@ -36,7 +36,7 @@ return [
     | @See https://github.com/artf/grapesjs/issues/546
     |
     */
-    
+
     'force_class' => false,
 
     /*
@@ -48,7 +48,12 @@ return [
     */
 
     'styles' => [
-        'vendor/laravel-grapesjs/assets/editor.css'
+        //'vendor/laravel-grapesjs/assets/editor.css'
+        'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css',
+        'https://unpkg.com/grapesjs/dist/css/grapes.min.css',
+        'https://grapesjs.com/stylesheets/tooltip.css',
+        'https://grapesjs.com/stylesheets/demos.css?v3',
+        'https://unpkg.com/grapick/dist/grapick.min.css',
     ],
 
     /*
@@ -60,7 +65,16 @@ return [
     */
 
     'scripts' => [
-        'vendor/laravel-grapesjs/assets/editor.js'
+        //'vendor/laravel-grapesjs/assets/editor.js'
+        'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js',
+        'https://unpkg.com/grapesjs',
+        //'https://unpkg.com/grapesjs-plugin-forms@2.0.5',
+        //'https://unpkg.com/grapesjs-component-countdown@1.0.1',
+        //'https://unpkg.com/grapesjs-plugin-export@1.0.11',
+        //'https://unpkg.com/grapesjs-tabs@1.0.6',
+        //'https://unpkg.com/grapesjs-custom-code@1.0.1',
+        //'https://unpkg.com/grapesjs-touch@0.1.1',
     ],
 
     /*
@@ -133,7 +147,7 @@ return [
     |
     | 1. Simplest way
     |   'plugin-name' => 'https://url_to_plugin_script.com'
-    |    
+    |
     | 2. Simple with options (Plugin script will be added to global scrips above)
     |   'plugin-name' => [
     |       //plugin options goes here
@@ -158,7 +172,7 @@ return [
 
     'plugins' => [
         'default' => [
-            'basic_blocks' => true,
+            //'basic_blocks' => true,
             'bootstrap4_blocks' => false,
             'code_editor' => true,
             'image_editor' => false,
@@ -181,7 +195,7 @@ return [
                      * Available options can be found here https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html
                      * Or you can use config builder https://cdn.ckeditor.com/4.14.0/full-all/samples/toolbarconfigurator/index.html
                      */
-                    'options' => [ 
+                    'options' => [
                         'toolbarGroups' => [
                             [ "name" => "document", "groups" => [ "mode", "document", "doctools" ] ],
                             [ "name" => "clipboard", "groups" => [ "clipboard", "undo" ] ],
@@ -207,6 +221,46 @@ return [
                 'options' => [],
                 'scripts' => [
                     'https://unpkg.com/grapesjs-plugin-forms',
+                ],
+            ],
+            [
+                'enabled' => false,
+                'name' => 'grapesjs-component-countdown',
+                'options' => [],
+                'scripts' => [
+                    'https://unpkg.com/grapesjs-component-countdown',
+                ],
+            ],
+            [
+                'enabled' => false,
+                'name' => 'grapesjs-plugin-export',
+                'options' => [],
+                'scripts' => [
+                    'https://unpkg.com/grapesjs-plugin-export',
+                ],
+            ],
+            [
+                'enabled' => false,
+                'name' => 'grapesjs-tabs',
+                'options' => [],
+                'scripts' => [
+                    'https://unpkg.com/grapesjs-tabs'
+                ],
+            ],
+            [
+                'enabled' => false,
+                'name' => 'grapesjs-custom-code',
+                'options' => [],
+                'scripts' => [
+                    'https://unpkg.com/grapesjs-custom-code'
+                ],
+            ],
+            [
+                'enabled' => false,
+                'name' => 'grapesjs-custom-code',
+                'options' => [],
+                'scripts' => [
+                    'https://unpkg.com/grapesjs-touch'
                 ],
             ],
         ],

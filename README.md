@@ -3,7 +3,7 @@ This package provide an esay way to integrate [GrapesJS](https://grapesjs.com/) 
 
 ## Installation
 
->`composer require jd-dotlogics/laravel-grapesjs`
+>`composer require ofyalcin/laravel-grapesjs`
 
 
 ## Publish files & migrate
