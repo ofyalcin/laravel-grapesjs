@@ -42,22 +42,22 @@ class Config
         $styleManager = app(StyleManager::class);
 
         $canvas = app(Canvas::class, ['styles' => $editable->style_sheet_links, 'scripts' => $editable->script_links]);
-        
+
         $this->pluginManager = $pluginManager;
         $this->assetManager = $assetManager;
         $this->canvas = $canvas;
         $this->storageManager = $storageManager;
         $this->styleManager = $styleManager;
 
-        $this->components = $editable->components; 
+        $this->components = $editable->components;
         $this->style = $editable->styles;
 
         $this->initStylesAndScripts();
-        
+
         // dd($this->toArray());
         return $this;
     }
-    
+
     protected function initStylesAndScripts()
     {
         collect(['styles', 'scripts'])
@@ -72,22 +72,22 @@ class Config
     public function getStyles()
     {
         $extraStyles = $this->pluginManager ? $this->pluginManager->getPluginStyles() : [];
-        
+
         return [...$extraStyles, ...$this->styles];
     }
 
     public function getScripts()
     {
         $extraScripts = $this->pluginManager ? $this->pluginManager->getPluginScripts() : [];
-        
-        return [...$extraScripts, ...$this->scripts];
+
+        return [...$this->scripts, ...$extraScripts];
     }
 
     public function toJson()
     {
         return json_encode($this);
     }
-    
+
     public function __toString()
     {
         return $this->toJson();
